@@ -1,35 +1,26 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
-import {
-    SafeAreaView,
-    StyleSheet,
-    ScrollView,
-    // View,
-    Text,
-    StatusBar,
-    Image,Button,
-    TouchableOpacity
-  } from 'react-native';
+import {StyleSheet,Text,View,TouchableOpacity,style} from 'react-native';
 
-
-const Buuton = () =>{
-    return(
-    <View>
-     <View >
-       <Text style={styles.button}></Text>
-     </View>
-    </View>
-    )
+const Buuton = props =>{
+  const content =(
+  <View style={[styles.button,{backgroundColor:props.color}]}>  
+  <Text style={styles.text}>{props.text}</Text>
+  </View>
+  )
+  return<TouchableOpacity onPress={props.onPress}>{content}</TouchableOpacity>
 }
-
 const styles = StyleSheet.create({
-button:{
-    borderWidth:1,
-    width:'100%',
-    height:'10%',
-    borderColor:'black',
-    backgroundColor:'red'
-}
+  button:{
+  padding:4,
+  borderRadius:6,
+  alignItems:'center',
+  textAlign:'center',
+  
+  },
+  text:{
+    color:'white',
+    fontSize:14,
+    textAlign:'center'
+  }
 })
-
 export default Buuton;

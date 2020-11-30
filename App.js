@@ -56,9 +56,9 @@ class App extends React.Component{
         {/* <Chip></Chip> */}
         {/* <Field></Field> */}
         {/* <Screen></Screen> */}
-        <Paper></Paper>
+        {/* <Paper></Paper> */}
         <Card></Card>
-        <Buuton></Buuton>
+        {/* <Buuton></Buuton> */}
     </View>
     );
   }

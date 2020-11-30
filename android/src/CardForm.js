@@ -18,64 +18,65 @@ import Buuton from './Buuton';
   class CardForm extends Component {
       state={ }
       render(props){
-          const {text,button,time}=this.props
+          const {textline,button,time,text}=this.props
           return(
-          <View>
             <View style={styles.container}>
-            <Text style={styles.text}>{text}</Text>
-              {/* <TouchableOpacity
-          style={styles.button}
-        > */}
-          {/* <Text style={{color:'white'}}>{button}</Text> */}
-    <Buuton></Buuton>
-        {/* </TouchableOpacity> */}
-        <View>
+              <View style={styles.textbox}>
+              <Text style={styles.text}>{textline}</Text>
+              </View>
+              
+           <View style={styles.buttonbox}>
+          <Buuton text={text} color={button}></Buuton>
+           </View>
+         
+         <View style={styles.timebox}> 
           <Text style={styles.time}>{time}</Text>
         </View>
             </View>
-          </View>
+         
           )
       }
   }
 
   const styles = StyleSheet.create({
     container:{
-        // width:'98%',
-        // height:'20%',
         borderColor:'white',
         borderWidth:1,
         backgroundColor:'white',
-        margin:3,
-        borderRadius:5,
-        display: 'flex',
-        flexDirection:'row',
+        margin:10,
+        borderRadius:7,
         flexWrap:'wrap',
-        alignItems:'center',
-        textAlign:'center',
-        
+        elevation:1,
     },
-    button: {
-      borderWidth:1,
-      borderRadius:7,
-    //   borderColor:'blue',
-    //   backgroundColor:'blue',
-      padding:2,
-       marginTop:10,
-       width:'25%',
-       height:'20%',
-       textAlign:'center',
-       alignItems:'center'
-    
-      },
       text:{
-          fontSize:18,
-          margin:10
+          fontSize:16,
+          padding:10
+          
       },
       time:{
           color:'#B0B0B0',
-          fontSize:19,
-          margin:10,
-          paddingTop:50
+          fontSize:16,
+          // marginTop:10
+ 
+      },
+      timebox:{
+      position:'absolute',
+      bottom:0,
+      left:10,
+
+      },
+      textbox:{
+        width:'80%',
+        height:'15%',
+        paddingRight: 5,
+        textAlignVertical: 'top',
+     
+      },
+      buttonbox:{
+        width:'20%',
+        position:'absolute',
+        top:10,
+        right:9,
       }
 })
 
